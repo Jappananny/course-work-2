@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Getter
 @Setter
-public abstract class Task {
+public abstract class Task implements Repeatable {
     private final String caption;
     private String description;
     private final String typeTask;
@@ -37,11 +37,10 @@ public abstract class Task {
         this.repeat = repeat;
         this.id = COUNTER.getAndIncrement();
     }
+    @Override
     public void markCompleted() {
         this.complete = String.valueOf(true);
     }
-
-    public abstract boolean appearsIn(LocalDate localDate);
 
     @Override
     public String toString() {

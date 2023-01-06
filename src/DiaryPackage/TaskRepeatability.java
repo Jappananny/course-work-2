@@ -1,6 +1,7 @@
 package DiaryPackage;
+import lombok.Getter;
 import java.time.LocalDate;
-
+@Getter
 public class TaskRepeatability {
     public static TaskRepeatability SINGLE;
     public static TaskRepeatability DAILY;
